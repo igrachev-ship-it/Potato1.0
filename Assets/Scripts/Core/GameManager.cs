@@ -13,7 +13,7 @@ namespace Potato.Core
         [SerializeField] private CurrencySystem _currencies;
         [SerializeField] private SaveSystem _saveSystem;
         [SerializeField] private PotatoController _potato;
-        [SerializeField] private WellController _well;
+        // [SerializeField] private WellController _well;
 
         private void Awake()
         {
@@ -41,7 +41,7 @@ namespace Potato.Core
         {
             var data = new SaveData
             {
-                wellBuilt = _well.IsBuilt,
+                // wellBuilt = _well.IsBuilt,
                 potatoStage = _potato.Stage,
                 waterTicksAccumulated = _potato.WaterTicks,
             };
@@ -57,7 +57,7 @@ namespace Potato.Core
 
             _potato.RestoreState(data.potatoStage, data.waterTicksAccumulated);
 
-            if (data.wellBuilt) _well.Build();
+            // if (data.wellBuilt) _well.Build();
         }
     }
 }
